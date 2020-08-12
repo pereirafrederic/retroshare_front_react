@@ -1,5 +1,5 @@
 import React from "react";
-import { FlexboxPlacement, TitleType } from "../../../enumeration/Enums";
+import { FlexboxPlacement, TitleType } from "../../../enumeration/Enum-css";
 import "./Title.scss";
 
 interface IProps {

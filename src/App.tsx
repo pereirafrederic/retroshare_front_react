@@ -4,7 +4,7 @@ import Container from "./components/externe/bulma/Container";
 import Title from "./components/externe/bulma/Title";
 import Footer from "./components/pages/Footer";
 import Header from "./components/pages/Header";
-import { FlexboxPlacement } from "./enumeration/Enums";
+import { FlexboxPlacement } from "./enumeration/Enum-css";
 
 function App() {
   return (

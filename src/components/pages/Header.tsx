@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { FlexboxPlacement } from "../../enumeration/Enums";
+import { FlexboxPlacement } from "../../enumeration/Enum-css";
 import Title from "../externe/bulma/Title";
 import "./Header.scss";
 
