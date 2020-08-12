@@ -37,9 +37,7 @@ export interface PlaceLight extends Commun {
 }
 export interface NotationLight {
   place: PlaceLight;
-
   evenement: EvenementLight;
-
   note: Number;
 }
 
@@ -81,7 +79,9 @@ export interface ThemeFull extends ThemeLight {
 }
 
 export interface UtilisateurFull extends UtilisateurLight {
-  pseudo: String;
+  /*
+  pas de pseudo dans le full=> corriger le back
+  */
   notations: Array<NotationLight>;
   places: Array<PlaceLight>;
 }
