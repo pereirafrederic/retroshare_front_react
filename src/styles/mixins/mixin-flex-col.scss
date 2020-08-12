@@ -1,0 +1,40 @@
+@mixin flex-col() {
+  display: flex;
+  flex-direction: col;
+}
+
+@mixin flex-col-end() {
+  @include flex-col();
+  justify-content: flex-end;
+}
+@mixin flex-col-start() {
+  @include flex-col();
+  justify-content: flex-start;
+}
+
+@mixin flex-col-space-around() {
+  @include flex-col();
+  justify-content: space-around;
+}
+
+@mixin flex-col-space-between() {
+  @include flex-col();
+  justify-content: space-between;
+}
+
+@mixin flex-col-space-evenly() {
+  @include flex-col();
+  justify-content: space-evenly;
+}
+
+@mixin flex-col-left() {
+  @include flex-col();
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+@mixin flex-col-right() {
+  @include flex-col();
+  justify-content: flex-end;
+  align-items: flex-end;
+}

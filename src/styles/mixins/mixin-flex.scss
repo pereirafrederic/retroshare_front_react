@@ -1,0 +1,19 @@
+@mixin flex-center() {
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin use_flexbox_by_default() {
+  display: flex;
+  flex-direction: column;
+
+  & div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  * {
+    min-width: 0px;
+    min-height: 0px;
+  }
+}

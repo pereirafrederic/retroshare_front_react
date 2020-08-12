@@ -1,0 +1,25 @@
+@import "../import-color.scss";
+
+@mixin coloration-dark() {
+  color: $color-dark;
+  background-color: $color-background-dark;
+  a {
+    color: $color-link-dark;
+  }
+}
+
+@mixin coloration-light() {
+  color: $color-light;
+  background-color: $color-background-light;
+  a {
+    color: $color-link-light;
+  }
+}
+
+@mixin coloration-color() {
+  color: $color-color;
+  background-color: $color-background-color;
+  a {
+    color: $color-link-color;
+  }
+}

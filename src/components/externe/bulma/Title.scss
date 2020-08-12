@@ -1,0 +1,21 @@
+@import "../../../styles/import-mixin.scss";
+@import "../../../styles/import-spaces.scss";
+
+.Bulma-Title {
+  text-transform: capitalize;
+  padding: $padding-title;
+  margin: $margin-title;
+}
+
+.Bulma-Title-CENTER {
+  @include flex-col();
+  @include border-center-line-middle();
+}
+
+.Bulma-Title-RIGHT {
+  @include flex-col-right();
+}
+
+.Bulma-Title-LEFT {
+  @include flex-col-left();
+}

@@ -1,0 +1,7 @@
+@import "../../styles/import-mixin.scss";
+
+.Header {
+  min-height: 8vh;
+  max-height: 8vh;
+  @include coloration-color();
+}
