@@ -35,13 +35,13 @@ export interface PlaceLight extends Commun {
   motifRefus: PlaceMotifRefus;
   prix: Number;
 }
-export interface NotationLight {
+export interface NotationLight extends Commun {
   place: PlaceLight;
   evenement: EvenementLight;
   note: Number;
 }
 
-export interface LieuLight {
+export interface LieuLight extends Commun {
   Latitude: Number;
   Longitude: Number;
 }
@@ -59,23 +59,46 @@ export interface EvenementFull extends EvenementLight {
   places: Array<PlaceLight>;
   notations: Array<NotationLight>;
 }
+export function instanceOfEvenementFull(object: any): object is EvenementFull {
+  return "notations" in object;
+}
+
 export interface HoldingFull extends Nom {
   evenements: Array<EvenementLight>;
 }
+
+export function instanceOfHoldingFull(object: any): object is HoldingFull {
+  return "evenements" in object;
+}
+
 export interface LieuFull extends LieuLight {
   evenements: Array<EvenementLight>;
 }
+export function instanceOfLieuFull(object: any): object is LieuFull {
+  return "evenements" in object;
+}
+
 export interface NotationFull extends NotationLight {
   juge: Array<EvenementLight>;
+}
+export function instanceOfNotationFull(object: any): object is NotationFull {
+  return "juge" in object;
 }
 
 export interface PlaceFull extends PlaceLight {
   utilisateur: UtilisateurLight;
   evenement: EvenementLight;
 }
+export function instanceOfPlaceFull(object: any): object is PlaceFull {
+  return "evenement" in object;
+}
 
 export interface ThemeFull extends ThemeLight {
   evenements: Array<EvenementLight>;
+}
+
+export function instanceOfThemeFull(object: any): object is ThemeFull {
+  return "evenements" in object;
 }
 
 export interface UtilisateurFull extends UtilisateurLight {
@@ -84,4 +107,10 @@ export interface UtilisateurFull extends UtilisateurLight {
   */
   notations: Array<NotationLight>;
   places: Array<PlaceLight>;
+}
+
+export function instanceOfUtilisateurFull(
+  object: any
+): object is UtilisateurFull {
+  return "places" in object;
 }

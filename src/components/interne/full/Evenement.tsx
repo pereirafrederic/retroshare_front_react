@@ -2,6 +2,7 @@ import React from "react";
 import {
   EvenementFull,
   EvenementLight,
+  instanceOfEvenementFull,
   NotationLight,
   PlaceLight,
 } from "../../../interfaces/interface-model";
@@ -9,7 +10,7 @@ import Notation from "./Notation";
 import Place from "./Place";
 
 export default (model: EvenementFull | EvenementLight) => (
-  <div className="Evenement" key={model.id}>
+  <div className="Evenement" key={`${model.id}`}>
     <div className="Evenement-light">
       <div className="Evenement-light-nom"> {model.nom}</div>
       <div className="Evenement-light-description"> {model.description}</div>
@@ -21,17 +22,24 @@ export default (model: EvenementFull | EvenementLight) => (
       <div className="Evenement-light-dateDebut"> {model.dateDebut}</div>
       <div className="Evenement-light-dateFin"> {model.dateFin}</div>
     </div>
-    <div className="Evenement-full">
-      <div className="Evenement-full-places">
-        {!!model.places &&
-          !!model.places.map((place: PlaceLight) => <Place model={place} />)}
-      </div>
-      <div className="Evenement-full-notations">
-        {!!model.notations &&
-          !!model.notations.map((notation: NotationLight) => (
-            <Notation model={notation} />
-          ))}
-      </div>
-    </div>
   </div>
 );
+
+/*
+{instanceOfEvenementFull(model) && (
+      <div className="Evenement-full">
+        <div className="Evenement-full-places">
+          {!!model.places &&
+            !!model.places.map((place: PlaceLight) => <Place model={place} />)}
+        </div>
+        <div className="Evenement-full-notations">
+          {
+            !!model?.notations.map((notation: NotationLight) => (
+              <Notation model={notation} />
+            ))
+          }
+        </div>
+      </div>
+    )}
+    
+    */

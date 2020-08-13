@@ -9,20 +9,18 @@
   pointer-events: none;
 }
 
-.App-nav {
-  min-height: 5vh;
-  max-height: 5vh;
-  @include flex-row-space-around();
-  font-size: calc(10px + 2vmin);
-  @include coloration-light();
-  @include border-solid-light();
-}
 .App-section {
   min-height: 80vh;
   max-height: 80vh;
   @include flex-row-space-around();
   @include coloration-light();
   @include flex-row-wrap();
+}
+
+.App-connexion {
+  @include flex-row-space-around();
+  @include coloration-light();
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -1,0 +1,17 @@
+@import "../../styles/import-mixin.scss";
+
+.Navigation {
+  @include coloration-dark();
+  @include flex-row-space-around();
+  min-height: 5vh;
+  max-height: 5vh;
+  font-size: calc(10px + 2vmin);
+
+  a {
+    @include coloration-dark();
+  }
+
+  .Navigation-link {
+    @include flex-row-space-around();
+  }
+}

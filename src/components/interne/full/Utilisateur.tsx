@@ -1,13 +1,14 @@
 import React from "react";
 import {
+  instanceOfUtilisateurFull,
   UtilisateurFull,
   UtilisateurLight,
 } from "../../../interfaces/interface-model";
 import Notation from "./Notation";
 import Place from "./Place";
 
-export default (model: UtilisateurFull) => (
-  <div className="Utilisateur" key={model.id}>
+export default (model: UtilisateurFull | UtilisateurLight) => (
+  <div className="Utilisateur" key={`${model.id}`}>
     <div className="Utilisateur-light">
       <div className="Utilisateur-light-pseudo"> {model.pseudo} </div>
       <div className="Utilisateur-light-nom"> {model.nom} </div>
@@ -20,17 +21,22 @@ export default (model: UtilisateurFull) => (
         {model.numeroTelephone}
       </div>
     </div>
-    <div className="Utilisateur-full">
-      <div className="Utilisateur-full-places">
-        {model.places.map((place) => (
-          <Place model={place} withEvenement={true} />
-        ))}
-      </div>
-      <div className="Utilisateur-full-notations">
-        {model.notations.map((notation) => (
-          <Notation model={notation} withEvenement={true} />
-        ))}
-      </div>
-    </div>
   </div>
 );
+/*
+{instanceOfUtilisateurFull(model) && (
+      <div className="Utilisateur-full">
+        <div className="Utilisateur-full-places">
+          {model?.places?.map((place) => (
+            <Place model={place} withEvenement={true} />
+          ))}
+        </div>
+        <div className="Utilisateur-full-notations">
+          {model?.notations?.map((notation) => (
+            <Notation model={notation} withEvenement={true} />
+          ))}
+        </div>
+      </div>
+    )}
+
+*/

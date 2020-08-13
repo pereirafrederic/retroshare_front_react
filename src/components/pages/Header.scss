@@ -3,5 +3,6 @@
 .Header {
   min-height: 8vh;
   max-height: 8vh;
-  @include coloration-color();
+  @include coloration-light();
+  @include flex-row-space-around();
 }
